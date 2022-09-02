@@ -1,0 +1,10 @@
+@mixin container($maxWidth: 1200px, $padding:6px) {
+    max-width: $maxWidth + ($padding * 2);
+    width: 100%;
+    padding: 0 $padding;
+    margin: 0 auto;
+}
+
+.container{
+    @include container()
+}
