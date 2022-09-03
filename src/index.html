@@ -1,18 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
-    <title>Document</title>
-</head>
+    @@include('_head.html', {
+        'title': 'Interior Design'
+    })
 <body>
 
     <div class="wrapper">
 
-        <header class="header"></header>
+        @@include('_header.html')
 
+        <main class="main">
+
+            <section class="why container">
+                <h2 class="why__title">Why Choosing Us</h2>
+
+                <div class="why__items">
+
+                    <article class="article">
+                        <div class="article__img-wrapper">
+                            <img src="img/icons/icon-1.svg" alt="" class="article__img">
+                        </div>
+                
+                        <div class="article__text-content">
+                
+                            <h3 class="article__title">Professionalism</h3>
+                            <p class="article__text">We deliver the final work with great professional way.</p>
+                            <a href="#" class="article__more">Learn More ></a>
+                        </div>
+                
+                    </article>
+                    
+                    <article class="article">
+                        <div class="article__img-wrapper">
+                            <img src="img/icons/icon-2.svg" alt="" class="article__img">
+                        </div>
+                
+                        <div class="article__text-content">
+                
+                            <h3 class="article__title">Smooth workflow</h3>
+                            <p class="article__text">We provide the most easy smoth workflow of interior design.</p>
+                            <a href="#" class="article__more">Learn More ></a>
+                        </div>
+                
+                    </article>
+                    
+                    <article class="article">
+                        <div class="article__img-wrapper">
+                            <img src="img/icons/icon-3.svg" alt="" class="article__img">
+                        </div>
+                
+                        <div class="article__text-content">
+                
+                            <h3 class="article__title">Trusted Platform</h3>
+                            <p class="article__text">People trust us since we openend the company.</p>
+                            <a href="#" class="article__more">Learn More ></a>
+                        </div>
+                
+                    </article>
+                    
+                    <article class="article">
+                        <div class="article__img-wrapper">
+                            <img src="img/icons/icon-4.svg" alt="" class="article__img">
+                        </div>
+                
+                        <div class="article__text-content">
+                
+                            <h3 class="article__title">Qualified employee</h3>
+                            <p class="article__text">Our employees are the best of the field from the city.</p>
+                            <a href="#" class="article__more">Learn More ></a>
+                        </div>
+                
+                    </article>
+
+                </div>
+
+
+            </section>
+
+
+            <div class="visualize container">
+
+            <div class="visualize__text-block">
+                <h2 class="visualize__title">Visualize your ideas with us</h2>
+                <p class="visualize__text">We are ready to help you build and also realize the room design that you dream of, with our experts and also the best category recommendations from us</p>
+
+                <div class="accordion">
+                    <input class="accordion__checkbox" id="accordion-1"  type="checkbox">
+                    <label class="accordion__label" for="accordion-1">Modern</label>
+                    <div class="accordion__content">
+                        Modern design is a term in the design world that refers to a house with a clean design, simple color choices, the use of materials including metal, glass, and steel, and is usually accompanied by clean lines.
+                    </div>
+                </div>
+                <div class="accordion">
+                    <input class="accordion__checkbox" id="accordion-2"  type="checkbox">
+                    <label class="accordion__label" for="accordion-2">Contemporary</label>
+                    <div class="accordion__content">
+                        Modern design is a term in the design world that refers to a house with a clean design, simple color choices, the use of materials including metal, glass, and steel, and is usually accompanied by clean lines.
+                    </div>
+                </div>
+                <div class="accordion">
+                    <input class="accordion__checkbox" id="accordion-3"  type="checkbox">
+                    <label class="accordion__label" for="accordion-3">Modern</label>
+                    <div class="accordion__content">
+                        Modern design is a term in the design world that refers to a house with a clean design, simple color choices, the use of materials including metal, glass, and steel, and is usually accompanied by clean lines.
+                    </div>
+                </div>
+                <div class="accordion">
+                    <input class="accordion__checkbox" id="accordion-4"  type="checkbox">
+                    <label class="accordion__label" for="accordion-4">Industrial</label>
+                    <div class="accordion__content">
+                        Modern design is a term in the design world that refers to a house with a clean design, simple color choices, the use of materials including metal, glass, and steel, and is usually accompanied by clean lines.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="visualize__image">
+                <img src="img/image5.png" alt="">
+            </div>
+
+
+            </div>
+
+            <section class="featured container">
+
+                <h2 class="featured__title">Featured Product</h2>
+
+                <div class="featured__items">
+
+                    <article class="featured__item card">
+                        
+                        <div class="card__img-wrapper">
+                            <img class="card__img" src="img/products/image-10.png" alt="">
+                        </div>
+                        <h3 class="card__name">Product</h3>
+                        <p class="card__category">Category</p>
+                        <div class="card__rating">
+                            <img src="img/Star.svg" alt="">
+                            <img src="img/Star.svg" alt="">
+                            <img src="img/Star.svg" alt="">
+                            <img src="img/Star.svg" alt="">
+                            <img src="img/Star.svg" alt="">
+                        </div>
+                        <div class="card__price">1 500 rub</div>
+
+                    </article>
+
+                    <article class="featured__item card">
+
+                        <div class="card__img-wrapper">
+                            <img class="card__img" src="img/products/image-7.png" alt="">
+                        </div>
+                        <h3 class="card__name">Product</h3>
+                        <p class="card__category">Category</p>
+                        <div class="card__rating">
+                            <img src="img/Star.svg" alt="">
+                            <img src="img/Star.svg" alt="">
+                            <img src="img/Star.svg" alt="">
+                            <img src="img/Star.svg" alt="">
+                            <img src="img/Star.svg" alt="">
+                        </div>
+                        <div class="card__price">1 500 rub</div>
+
+                    </article>
+
+                    <article class="featured__item card">
+
+                        <div class="card__img-wrapper">
+                            <img class="card__img" src="img/products/image-8.png" alt="">
+                        </div>
+                        <h3 class="card__name">Product</h3>
+                        <p class="card__category">Category</p>
+                        <div class="card__rating">
+                            <img src="img/Star.svg" alt="">
+                            <img src="img/Star.svg" alt="">
+                            <img src="img/Star.svg" alt="">
+                            <img src="img/Star.svg" alt="">
+                            <img src="img/Star.svg" alt="">
+                        </div>
+                        <div class="card__price">1 500 rub</div>
+
+                    </article>
+
+                    <article class="featured__item card">
+
+                        <div class="card__img-wrapper">
+                            <img class="card__img" src="img/products/image-9.png" alt="">
+                        </div>
+                        <h3 class="card__name">Product</h3>
+                        <p class="card__category">Category</p>
+                        <div class="card__rating">
+                            <img src="img/Star.svg" alt="">
+                            <img src="img/Star.svg" alt="">
+                            <img src="img/Star.svg" alt="">
+                            <img src="img/Star.svg" alt="">
+                            <img src="img/Star.svg" alt="">
+                        </div>
+                        <div class="card__price">1 500 rub</div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="about">
+
+                <h2 class="about__title">What they say about our services</h2>
+
+                <div class="about__slider container">
+
+                    <div class="about-slider__slides">
+
+                        <article class="about-slider__slide comment">
+
+                            <h3 class="comment__title">Best planning service</h3>
+                            <p class="comment__text">I had fantastic experience at shady rhymes with pax planner, shady rhymes was so helpful and friendly and went above and beyond to help me configure my perfect walk in wardobe room.</p>
+                            <div class="comment__person">
+                                <div class="comment__avatar">
+                                    <img src="img/commments/image12.png" alt="ava" width="60" height="60">
+                                </div>
+                                <div class="comment__text-person">
+                                    <p class="comment__name-person">John doe</p>
+                                    <p class="comment__profession-person">Project manager of cupalo</p>
+                                </div>
+                            </div>
+
+                        </article>
+
+                        
+                        <article class="about-slider__slide comment">
+
+                            <h3 class="comment__title">Flexible and reliable</h3>
+                            <p class="comment__text">Terrific work from beginning to end can work any angle from minimal help to complete project handling professional without a doubt!  Love!</p>
+                            <div class="comment__person">
+                                <div class="comment__avatar">
+                                    <img src="img/commments/image12.png" alt="ava" width="60" height="60">
+                                </div>
+                                <div class="comment__text-person">
+                                    <p class="comment__name-person">Woods Moniq</p>
+                                    <p class="comment__profession-person">Freelancer</p>
+                                </div>
+                            </div>
+
+                        </article>
+
+                        
+                        <article class="about-slider__slide comment">
+
+                            <h3 class="comment__title">Solution innovative</h3>
+                            <p class="comment__text">"I loved working with Darla shady rhymes for about 2 years and highly recommend anyone looking for an interior designer agency who brings creativity but designs something that fits YOU and your style.</p>
+                            <div class="comment__person">
+                                <div class="comment__avatar">
+                                    <img src="img/commments/image12.png" alt="ava" width="60" height="60">
+                                </div>
+                                <div class="comment__text-person">
+                                    <p class="comment__name-person">Denis Rara</p>
+                                    <p class="comment__profession-person">Architect at BPPLU</p>
+                                </div>
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <div class="visualize container">
+
+                <div class="visualize__image">
+                    <img src="img/image5.png" alt="">
+                </div>
+
+                <div class="visualize__text-block">
+                    <h2 class="visualize__title">Make your room feel homey</h2>
+                    <p class="visualize__text">We help people not only to make the room at home better, but we help people to feel a more homey and comfortable room, you don’t have to worry about the result because of these interiors are made by people who are professionals in their dields with an elegant and lucuriois style and with premium quality materials
+
+                        Contact us if you are interested in working with us</p>
+
+                    <form class="form form_border_red" action="#" method="get">
+                        <input class="form__input" type="search" placeholder="Search Furniture">
+                    </form>
+
+                </div>
+
+            </div>
+
+        </main>
+
+        @@include('_footer.html')
     </div>
 
     <script src="js/script.js"></script>

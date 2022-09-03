@@ -5,7 +5,7 @@
   "main": "index.html",
   "homepage": "https://AlexandrMolkov.github.io/Interior-design",
   "scripts": {
-    "deply": "dh-pages -d dist"
+    "deply": "gh-pages -d dist"
   },
   "author": "Alexander Molkov",
   "license": "ISC",
