@@ -37,7 +37,7 @@ body {
         display: flex;
         justify-content: space-between;
 
-        margin-bottom: 164px;
+        margin-bottom: 154px;
     }
     .buttons{
         position: relative;
@@ -112,9 +112,9 @@ body {
     position: relative;
     z-index: 10;
 
-    /* max-width: 840px; */
-    margin: 0 auto;
-    /* padding-left: 22px; */
+  
+    margin-left: -94px;
+  
     padding-top: 45px;
     z-index: 2;
 
@@ -124,7 +124,7 @@ body {
     max-width: 460px;
     width: 100%;
 
-/*     margin-left: -94px; */
+
 
     &__list {
         transition: all 0.3s;
@@ -545,13 +545,15 @@ body {
 }
 
 .featured {
-
+    padding-top: 205px;
 
     &__title {
         text-align: center;
         font-weight: 500;
         font-size: 36px;
         line-height: 200%;
+
+        margin-bottom: 40px;
     }
 
     &__items {
@@ -562,28 +564,47 @@ body {
 
     &__item {
     }
+
+    &-mb-200{
+     margin-bottom: 200px;
+    }
 }
+
+
 .card {
 
-    width: 425px;
+    
    /*  height: 400px; */
 
 
-    background: #F6F6F6;
+    
 
     &__img-wrapper{
-        text-align: center;
+        background: #F6F6F6;
+        width: 425px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-bottom: 18px;
     }
     &__img {
 
-        
+       
 
+    }
+
+    &__info{
+        padding-left: 20px;
     }
 
     &__name {
         font-weight: 400;
         font-size: 18px;
         line-height: 200%;
+
+        margin-bottom: 10px;
     }
 
     &__category {
@@ -591,9 +612,12 @@ body {
         font-size: 14px;
         line-height: 200%;
         color: #C4C4C4;
+
+        margin-bottom: 8px;
     }
 
     &__rating {
+        margin-bottom: 10px;
     }
 
     &__price {
@@ -604,11 +628,23 @@ body {
 }
 
 .about {
+    padding-top: 88px;
+    /* padding-bottom: 250px; */
+
+    
+    height: 800px;
 
     background: linear-gradient(279.85deg, #FFFFFF 0%, #FAF5F2 100%);
 
     &__title {
         text-align: center;
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 200%;
+
+
+        margin-bottom: 108px;
+
     }
 }
 .about-slider {
@@ -654,6 +690,14 @@ body {
         align-self: flex-start;
     }
 
+    &__avatar{
+        border-radius: 100%;
+        display: block;
+        overflow: hidden;
+        width: 60px;
+        height: 60px;
+    }
+
     &__person {
             display: flex;
 
@@ -678,19 +722,66 @@ body {
     }
 }
 
+
 .about-slider__slide{
 
+}
+
+.make {
+    padding-top: 204px;
+    padding-bottom: 190px;
+    display: flex;
+    justify-content: space-between;
+
+    &__text-block{
+        overflow: auto;
+        max-height: 600px;
+    }
+
+    &__title{
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 200%;
+
+        margin-bottom: 20px;
+    }
+    &__text{
+        max-width: 800px;
+
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 200%;
+
+        margin-bottom: 20px;
+        
+    }
+
+    &__image{
+        
+        img{
+            height: 100%;
+            border-radius: 50px;
+        }
+    }
 }
 
 
 
 .footer{
     height: 600px;
+    padding-top: 100px;
     background: linear-gradient(275.58deg, #000000 0%, #4B4B4B 100%);
+
+
 
     &__content{
         display: flex;
         justify-content: space-between;
+
+        .logo{
+            transform: scale(2);
+            padding: 65px 0 0 40px;
+        }
     }
 
     .columns {
@@ -705,8 +796,19 @@ body {
         &_mr_82{
             margin-right: 82px;
         }
+
+        &__name{
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 36px;
+            color: #FADCD9;
+
+            margin-bottom: 24px;
+
+        }
     
         &__list {
+            
             font-family: 'Raleway';
             font-weight: 700;
             font-size: 19px;
@@ -721,10 +823,16 @@ body {
         }
     
         &__li {
-            margin-bottom: 10px;
+            margin-bottom: 23px;
+
+
         }
     
         &__link {
+            font-family: 'Poppins';
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 27px;
         }
     }
 }
