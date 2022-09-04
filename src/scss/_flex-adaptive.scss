@@ -1,0 +1,25 @@
+@mixin flexContainer($gap: 15px, $padding: 15px 15px, $justify: space-evenly, $wrap: wrap) {
+    display: flex;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    gap: $gap;
+    padding: $padding;
+}
+@mixin flexItem($flex,$max) {
+    max-width: $max;
+    flex: $flex;
+
+    [class*="img-wrapper"]{
+        width: 100%;
+    
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+}
+
+@mixin flexItemWithoutImg($flex,$max) {
+    max-width: $max;
+    flex: $flex;
+}
