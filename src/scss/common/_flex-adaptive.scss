@@ -1,15 +1,16 @@
-@mixin flexContainer($gap: 15px, $padding: 15px 15px, $justify: space-evenly, $wrap: wrap) {
+@mixin flexContainer($gap: 15px, $padding: 15px 15px,$direction: row, $justify: space-between, $wrap: wrap) {
     display: flex;
     flex-wrap: $wrap;
+    flex-direction: $direction;
     justify-content: $justify;
     gap: $gap;
     padding: $padding;
 }
-@mixin flexItem($flex,$max) {
+@mixin flexItem($max,$flex: 1 1 150px) {
     max-width: $max;
     flex: $flex;
 
-    [class*="img-wrapper"]{
+    .flex-img-wrapper{
         width: 100%;
     
         img {
@@ -17,9 +18,4 @@
             display: block;
         }
     }
-}
-
-@mixin flexItemWithoutImg($flex,$max) {
-    max-width: $max;
-    flex: $flex;
 }

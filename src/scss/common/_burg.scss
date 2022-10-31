@@ -1,0 +1,97 @@
+.burg{
+    display: none;
+    width: 32px;
+    height: 32px;
+
+    overflow: hidden;
+    position: relative;
+
+    background: transparent;
+
+    margin-top: 21px;
+    width: 27px;
+    height: 26px;
+    margin-top: 35px;
+
+    z-index: 10;
+
+    @media (max-width: 425px) {
+        margin-top: 21px;
+
+        width: 27px;
+        height: 26px;
+    }
+
+    span{
+        width: 26px;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -1px);
+        transition: all 0.1s;
+    }
+
+    &:hover{
+        cursor: pointer;
+    }
+
+    &::before,
+    &::after{
+        content: "";
+        position: absolute;
+        width: 26px;
+        height: 2px;
+        background-color: #fff;
+
+        transition: all 0.2s;
+    }
+    &::before{
+        top: 6px;
+    }
+    &::after{
+        bottom: 6px;
+    }
+
+    &.open{
+        
+        span{
+            transform: translate(110%, -1px);
+            background-color: #fff;
+        }
+
+        &::before,
+        &::after {
+            background-color: #fff;
+        }
+
+        &::before{
+            transform-origin: 0%;
+            /* top: 16px; */
+            transform: rotate(45deg);
+            left: 15%;
+            top: 4px;
+        }
+        &::after{
+            /* bottom: 14px; */
+            bottom: 2px;
+            left: 15%;
+            transform-origin: 0% 100%;
+            transform: rotate(-45deg);
+        }
+
+        @media (max-width: 490px){
+            span,
+            &::before,
+            &::after {
+                background-color: #000;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        display: flex;
+    }
+
+
+}

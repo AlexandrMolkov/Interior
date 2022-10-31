@@ -1,0 +1,112 @@
+.accordion{
+
+    position: relative;
+    padding-right: 54px;
+
+    overflow: hidden;
+
+    max-width: 872px;
+    min-height: 36px;
+
+    text-align: start;
+
+    margin-bottom: 20px;
+
+    @media (max-width: 375px) {
+        padding-right: 0px;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 1;
+
+        padding-right: 90px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        margin-top: -120%;
+
+        transition: all 0.3s;
+
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 200%;
+
+        @media (max-width: 375px) {
+            font-size: 12px;
+            padding-right: 0px;
+        }
+
+      }
+
+    &__label{ 
+
+        position: relative;
+        z-index: 2;
+
+        width: 100%;
+        min-height: 30px;
+
+        display: block;
+
+        user-select: none;
+
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 200%;
+
+        transition: all 0.3s;
+        background-color: white;
+
+
+        @media (max-width: 375px) {
+            font-size: 12px;
+        }
+        
+
+        
+        &:hover{
+            color: #F79489;
+            cursor: pointer;
+        }
+
+        &::after,&::before {
+            content: "";
+            position: absolute;
+            background-color: #F79489;
+        }
+        &::before{
+            
+            top: 62%;
+            right: 12px;
+            margin: -5px 0 0 -5px;
+
+            width: 16px;
+            height: 2px;
+            
+        }
+        &::after{
+            top: 42%;
+            right: 19px;
+            margin: -5px 0 0 -5px;
+            width: 2px;
+            height: 16px;
+            background-color: #F79489;
+        }
+    }
+
+    &__checkbox{
+
+        display: none;
+
+        &:checked ~ .accordion__content{
+            margin-top: 0%;
+
+        }
+
+        &:checked ~ .accordion__label::after{
+            transform: scale(0);
+        }
+
+    }
+}
