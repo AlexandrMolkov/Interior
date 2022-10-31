@@ -16,40 +16,56 @@ addWebP(function (support) {
 })
 
 
-//============================================================ Burger
+//======================== Burger
+
+const burgers = document.querySelectorAll(`.burg`)
 
 
+document.addEventListener('click', (e) => {
+    
+    if(e.target.classList.contains('burg')) {
+        const burg = e.target
+        burg.classList.toggle(`open`)
+        document.querySelector(burg.dataset.target).classList.toggle(`show`)
+        if(burg.classList.contains('open')){document.querySelector('.wrapper').style.overflow = "hidden"}
+        else {document.querySelector('.wrapper').style.overflow = "visible"}
+    } else {
+        burgers.forEach(b => {
+            document.querySelector(b.dataset.target).classList.remove(`show`)
+            b.classList.remove(`open`)
+            document.querySelector('.wrapper').style.overflow = "visible"
+        })
+    }
+})
 
+function checkWidth() {
+    if(window.innerWidth > 768) {
+        burgers.forEach(b => {
+            document.querySelector(b.dataset.target).classList.remove(`show`)
+            b.classList.remove(`open`) 
+        })
+        document.querySelector('.wrapper').style.overflow = "visible"
+    }
+}
 
+    
+//========================  accordion
 {
 
-    const burgers = document.querySelectorAll(`.burg`)
-    
-    burgers.forEach(function(elem) {
-        //console.log(elem)
-        elem.addEventListener('click', (e)=>{
-            const burg = e.target
+    const accordion = document.querySelector('#accordion-1')
+
+    accordion.addEventListener('click', e => {
+        
+        if(e.target.tagName === 'INPUT') {
             
-            //element.preventDefault();
-            burg.classList.toggle(`open`)
-            burg.nextElementSibling.classList.toggle(`show`)
-    /*         if(burg.classList.contains(`open`) && !burg.nextElementSibling.classList.contains(`navigation_pos_static`)){
-                document.body.style.overflow = "hidden"
-            } else {
-                document.body.style.overflow = "auto"
-            } */
-    
-        })
+            for(let inp of accordion.querySelectorAll('input')){
+                if (inp != e.target) inp.checked = false
+            }
+        }
     })
-    
-    }
+}
 
 
-
-
-
-
-    
 
 
 class Slider {
@@ -85,6 +101,8 @@ class Slider {
 
             this.slidesField.style.marginLeft = (this.width.slice(0, this.width.length - 2) - this.slideMinWidth) /2.5 + "px"
 
+        } else {
+            this.slidesField.style.marginLeft = '0px'
         }
         
         
@@ -115,6 +133,7 @@ class Slider {
 
             }
             watchWidth(last)
+
 
             this.width = window.getComputedStyle(this.slidesWrapper).width;
             
@@ -147,6 +166,13 @@ class Slider {
             this.sizeOfSlide = 100 / this.countOfSlides
             this.slidesField.style.width = (100 + ((this.slides.length - this.countOfSlides) * this.sizeOfSlide)) + '%';
         }
+
+   
+        
+        this.slides.forEach(slide=>{
+            
+            slide.style.width = (100 / this.countOfSlides) + '%';
+        })
 
     }
 
@@ -336,7 +362,8 @@ class Slider {
                     dots.forEach((dot)=> dot.classList.remove(`current`))
                     dot.classList.add(`current`)
     
-                    this.offset = ((100 / (this.slides.length - this.countOfSlides)) * ((this.slideIndex - 1))).toFixed(3)
+                    /* this.offset = ((100 / (this.slides.length - this.countOfSlides)) * ((this.slideIndex - 1))).toFixed(3) */
+                    this.offset = ((100 / (this.slides.length / this.countOfSlides)) * ((this.slideIndex - 1))).toFixed(3)
                     this.slidesField.style.transform = `translateX(-${this.offset}%)`;
     
                 })   
@@ -362,7 +389,7 @@ class Slider {
 
         this.slidesWrapper.parentNode.style.position = 'relative'
 
-        console.log(this.slidesWrapper.parentNode)
+        this.pagination = navDotsWrapper
     }
 
     initText(sliderNameBlock,sliderNames,sliderTextBlock,text){
@@ -388,22 +415,49 @@ class Slider {
         this.breakPoints = breakPoints
         this.onRes()
     }
+
+    autoAnimation(){
+        this.slideIndex = (this.slideIndex + 1) >= (this.slides.length + 1) ? this.slideIndex = 1 : this.slideIndex + 1
+
+        this.offset = ((100 / this.slides.length) * (this.slideIndex - 1)).toFixed(3)
+        this.slidesField.style.transform = `translateX(-${this.offset}%)`;
+        
+       
+
+        for(let p of this.pagination.children){
+            console.log(p.dataset.slidenumber === this.slideIndex + 1)
+           
+            p.classList.remove('current')
+
+            if (p.dataset.slidenumber == this.slideIndex) {
+                p.classList.add('current')
+            } 
+
+        }
+
+    }
+    startAutoAnimation() {
+
+        setInterval(()=> {
+            this.autoAnimation()
+        },2000)
+        
+    }
 }
  
 const slider1 = new Slider('.header__slider',1,true, 768)
 slider1.init()
 slider1.initNav()
+slider1.startAutoAnimation()
 
-const sliderComments = new Slider('.about__slider',3,true)
+const sliderComments = new Slider('#about-slider',3,true)
 sliderComments.init()
 sliderComments.initNav()
-sliderComments.initBreakPoints(
-    {
-        768: 2
-    }
-)
+/* sliderComments.startAutoAnimation() */
 
 window.onresize = function() {
     slider1.onRes()
     sliderComments.onRes()
+
+    checkWidth() 
 }
